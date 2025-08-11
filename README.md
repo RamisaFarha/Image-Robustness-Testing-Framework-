@@ -29,14 +29,15 @@ The goal of this project is to:
 ---
 
 ## 🛠️ Methods
+
 ### **1. Transformations Applied**
-| Transformation | Parameter Range | Description |
-|----------------|----------------|-------------|
+| Transformation     | Parameter Range | Description |
+|--------------------|----------------|-------------|
 | **JPEG Compression** | 80, 60, 40, 20 | Simulates lossy compression artifacts |
-| **Cropping** | 5%, 10%, 20% | Crops center and resizes back |
-| **Rotation** | 5°, 10°, 20° | Rotates image without expanding |
-| **Gaussian Noise** | σ = 5, 10, 20 | Adds pixel noise |
-| **Gaussian Blur** | radius = 1, 2, 3 | Simulates lens or motion blur |
+| **Cropping**       | 5%, 10%, 20%   | Crops center and resizes back |
+| **Rotation**       | 5°, 10°, 20°   | Rotates image without expanding |
+| **Gaussian Noise** | σ = 5, 10, 20  | Adds pixel noise |
+| **Gaussian Blur**  | radius = 1, 2, 3 | Simulates lens or motion blur |
 
 ---
 
@@ -62,36 +63,31 @@ The goal of this project is to:
 ---
 
 ## 📊 Results
+
 ### **Sample Metric Trend**
 _(Example: JPEG compression severity vs metrics)_
-![PSNR vs Severity](results/psnr_vs_severity.png)
-![SSIM vs Severity](results/ssim_vs_severity.png)
+
+![PSNR vs Severity](results/psnr_vs_severity.png)  
+![SSIM vs Severity](results/ssim_vs_severity.png)  
 ![Edge SSIM vs Severity](results/edge_ssim_vs_severity.png)
 
 ### **Before/After Panel Example**
 _(Crop = 20%)_
+
 ![Before/After Example](results/figures/example_panel.png)
 
 ---
 
 ## 📁 Project Structure
-
+```plaintext
 📦 image-robustness-caltech101
-├── robust_test.py # Main evaluation script
-├── notebook.ipynb # Kaggle notebook used for running the project
-├── README.md # Project documentation
+├── robust_test.py                 # Main evaluation script
+├── notebook.ipynb                 # Kaggle notebook used for running the project
+├── README.md                      # Project documentation
 ├── results/
-│ ├── results.csv # Per-image metrics
-│ ├── summary_by_transform.csv # Averaged results by transform/severity
-│ ├── psnr_vs_severity.png
-│ ├── ssim_vs_severity.png
-│ ├── edge_ssim_vs_severity.png
-│ └── figures/ # Before/after panels for each transformation
-
-## Run Evaluation
-python robust_test.py \
-  --in_dir path/to/caltech101_subset \
-  --out_dir results \
-  --resize 256
-
-
+│   ├── results.csv                 # Per-image metrics
+│   ├── summary_by_transform.csv    # Averaged results by transform/severity
+│   ├── psnr_vs_severity.png
+│   ├── ssim_vs_severity.png
+│   ├── edge_ssim_vs_severity.png
+│   └── figures/                    # Before/after panels for each transformation
