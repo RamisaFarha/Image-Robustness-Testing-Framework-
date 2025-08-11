@@ -75,3 +75,23 @@ _(Crop = 20%)_
 ---
 
 ## 📁 Project Structure
+
+📦 image-robustness-caltech101
+├── robust_test.py # Main evaluation script
+├── notebook.ipynb # Kaggle notebook used for running the project
+├── README.md # Project documentation
+├── results/
+│ ├── results.csv # Per-image metrics
+│ ├── summary_by_transform.csv # Averaged results by transform/severity
+│ ├── psnr_vs_severity.png
+│ ├── ssim_vs_severity.png
+│ ├── edge_ssim_vs_severity.png
+│ └── figures/ # Before/after panels for each transformation
+
+## Run Evaluation
+python robust_test.py \
+  --in_dir path/to/caltech101_subset \
+  --out_dir results \
+  --resize 256
+
+
